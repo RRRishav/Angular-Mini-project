@@ -3,10 +3,31 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  standalone: true,              // ✅ Add this line
   imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
+
 export class App {
-  protected title = 'my-angular-app';
+
+   
+
+  counter:number = 0;
+
+ handleIncrement() {
+  this.counter = this.counter  + 1
+ }
+ 
+
+ handleDecrement() {
+  this.counter = this.counter  - 1
+
+ }
+
+ handleReset() {
+  this.counter = 0
+ }
+ 
+
 }
